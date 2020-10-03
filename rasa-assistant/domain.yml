@@ -5,13 +5,26 @@ intents:
   - goodbye
   - affirm
   - deny
+  - ask_uses
   - mood_great
   - mood_unhappy
   - bot_challenge
 
 responses:
+  utter_greet_start:
+    - text: "Greetings! My name is LangBot, a conversational assistant designed to assist with language learning. 
+    I'm still in early development, but I can answer questions about my current functionality!"
+
   utter_greet:
   - text: "Hey! How are you?"
+
+  utter_uses:
+  - text: "Glad you asked! Right now I'm only able to handle simple conversations in English. I can tell you more about 
+  planned features if you'd like."
+
+  utter_planned_features:
+  - text: "Currently planned features include: action calls to Youtube API for learning resources, bilingual support for 
+  English and Japanese, translation actions through Google Translate API"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -24,10 +37,10 @@ responses:
   - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Thanks for chatting with me. Goodbye!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I'm LangBot."
 
 session_config:
   session_expiration_time: 60

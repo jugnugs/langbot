@@ -17,6 +17,18 @@ nlu:
     - goodevening
     - good afternoon
 
+- intent: ask_uses
+  examples: |
+    - what do you do
+    - what can you do
+    - tell me about yourself
+    - what are your uses
+    - what can i do with you
+    - what are you able to do right now
+    - tell me about your functionality
+    - how can i use you
+
+
 - intent: goodbye
   examples: |
     - good afternoon
@@ -37,7 +49,11 @@ nlu:
     - y
     - indeed
     - of course
+    - alright
     - that sounds good
+    - ok
+    - sure
+    - sounds good
     - correct
 
 - intent: deny
