@@ -6,11 +6,27 @@
 
 
 # This is a simple example for a custom action which utters "Hello World!"
+import os
+from typing import Any, Text, Dict, List
 
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+
+from googleapiclient.discovery import build
+
+youtube_api_key = os.environ.get('YT_API_KEY')
+
+youtube = build('youtube', 'v3', developerKey=youtube_api_key)
+
+request = youtube.channels().list(
+        part='statistics',
+        forUsername='schafer5'
+    )
+
+response = request.execute()
+
+print(response)
+
 #
 #
 # class ActionHelloWorld(Action):
