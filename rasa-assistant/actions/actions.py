@@ -15,17 +15,21 @@ from rasa_sdk.executor import CollectingDispatcher
 from googleapiclient.discovery import build
 
 youtube_api_key = os.environ.get('YT_API_KEY')
+youtube_url_base = '//www.youtube.com/watch?v='
 
 youtube = build('youtube', 'v3', developerKey=youtube_api_key)
 
-request = youtube.channels().list(
-        part='statistics',
-        forUsername='schafer5'
+request = youtube.search().list(
+        part='snippet',
+        q='among us',
+        relevanceLanguage='en' 
     )
 
 response = request.execute()
 
-print(response)
+for item in response['items']:
+    id = item['id']['videoId']
+    print(youtube_url_base + id)
 
 #
 #
