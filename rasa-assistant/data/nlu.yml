@@ -55,6 +55,24 @@ nlu:
     - youtube video
     - give me some videos in [arabic]("lang")
 
+- intent: inform_lang
+  examples: |
+    - my target language is [english]("lang")
+    - in [spanish]("lang")
+    - it's [german]("lang")
+    - its [italian]("lang")
+    - [chinese]("lang") please
+    - [japanese]("lang")
+    - [vietnamese]("lang")
+    - [tagalog]("lang")
+    - [french]("lang")
+    - [polish]("lang")
+    - [russian]("lang")
+
+- intent: inform_search_query
+  examples: |
+    - [cats]("search_query")  
+
 
 - intent: goodbye
   examples: |
