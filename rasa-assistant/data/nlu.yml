@@ -1,6 +1,20 @@
 version: "2.0"
 
 nlu:
+- lookup: lang
+  examples: |
+    - english
+    - spanish
+    - german
+    - italian
+    - chinese
+    - japanese
+    - vietnamese
+    - tagalog
+    - french
+    - polish
+    - russian
+
 - intent: greet
   examples: |
     - hey
