@@ -6,6 +6,10 @@ rules:
   steps:
   - intent: request_youtube_vid
   - action: utter_prompt_youtube_form
+  - action: utter_ask_youtube_vid_form_lang
+  - intent: inform_lang
+  - action: utter_ask_youtube_vid_form_search_query
+  - intent: inform_search_query
   - action: youtube_vid_form
 
 - rule: Say goodbye anytime the user says goodbye
