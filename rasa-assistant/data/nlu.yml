@@ -28,6 +28,18 @@ nlu:
     - tell me about your functionality
     - how can i use you
 
+- intent: request_youtube_vid
+  examples: |
+    - i want to watch something
+    - i want to watch something in {}
+    - i would like to watch a youtube video in {}
+    - i would like to watch a video in {}
+    - can i watch something in {}
+    - i wanna watch {} in {}
+    - send me a link to a youtube video in {}
+    - youtube video
+    - give me some videos in {}
+
 
 - intent: goodbye
   examples: |

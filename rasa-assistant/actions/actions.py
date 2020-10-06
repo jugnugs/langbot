@@ -31,6 +31,18 @@ for item in response['items']:
     id = item['id']['videoId']
     print(youtube_url_base + id)
 
+class ActionGetYouTubeVideo(Action):
+
+    def name(self) -> Text:
+
+        return "action_get_youtube_vid"
+
+    async def run(
+        self, dispatcher, tracker: Tracker, domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        return []
+
 #
 #
 # class ActionHelloWorld(Action):

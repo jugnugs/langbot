@@ -1,5 +1,17 @@
 version: "2.0"
 
+forms:
+  youtube_vid_form:
+    lang:
+      - type: from_entity
+        entity: lang
+    search_query:
+      - type: from_entity
+        entity: search_query
+
+actions:
+  - action_get_youtube_vid
+
 intents:
   - greet
   - goodbye
@@ -25,6 +37,15 @@ responses:
   utter_planned_features:
   - text: "Currently planned features include: action calls to Youtube API for learning resources, bilingual support for 
   English and Japanese, translation actions through Google Translate API"
+
+  utter_prompt_youtube_form:
+  - text: "OK, I'll send you some links to some Youtube videos you might be interested in."
+
+  utter_ask_youtube_vid_form_lang: 
+  - text: "What is your target language?"
+
+  utter_ask_youtube_vid_form_search_query: 
+  - text: "What do you want to watch?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"

@@ -2,6 +2,12 @@ version: "2.0"
 
 rules:
 
+- rule: Activate youtube vid form
+  steps:
+  - intent: request_youtube_vid
+  - action: utter_prompt_youtube_form
+  - action: youtube_vid_form
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
