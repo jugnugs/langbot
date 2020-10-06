@@ -15,3 +15,13 @@ stories:
   - action: utter_happy
   - intent: goodbye
   - action: utter_goodbye
+
+- story:  Activate youtube vid form
+  steps:
+  - intent: request_youtube_vid
+  - action: utter_prompt_youtube_form
+  - action: utter_ask_youtube_vid_form_lang
+  - intent: inform_lang
+  - action: utter_ask_youtube_vid_form_search_query
+  - intent: inform_search_query
+  - action: action_get_youtube_vid

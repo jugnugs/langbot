@@ -37,10 +37,14 @@ class ActionGetYouTubeVideo(Action):
 
         return "action_get_youtube_vid"
 
-    async def run(
-        self, dispatcher, tracker: Tracker, domain: Dict[Text, Any],
-    ) -> List[Dict[Text, Any]]:
-
+    async def run(self, 
+                dispatcher: CollectingDispatcher, 
+                tracker: Tracker, 
+                domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        q = tracker.get_slot('search_query')
+        lang = tracker.get_slot('lang')
+        dispatcher.utter_message(text = q)
+        dispatcher.utter_message(text = lang)
         return []
 
 #

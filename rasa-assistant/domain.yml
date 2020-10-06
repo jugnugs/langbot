@@ -9,10 +9,17 @@ forms:
       - type: from_entity
         entity: search_query
 
+entities:
+  - lang
+  - search_query
+
 actions:
   - action_get_youtube_vid
 
 intents:
+  - request_youtube_vid
+  - inform_lang
+  - inform_search_query
   - greet
   - goodbye
   - affirm

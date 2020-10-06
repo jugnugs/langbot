@@ -45,33 +45,34 @@ nlu:
 - intent: request_youtube_vid
   examples: |
     - i want to watch something
-    - i want to watch something in [english]("lang")
-    - i would like to watch a youtube video in [german]("lang")
-    - i would like to watch a video in [french]("lang")
-    - can i watch something in [spanish]("lang")
-    - i want to watch [among us]("search_query") in [chinese]("lang")
-    - i wanna watch [bad voice acting]("search_query") in [japanese]("lang")
-    - send me a link to a youtube video in [polish]("lang")
+    - i want to watch something in [english](lang)
+    - i would like to watch a youtube video in [german](lang)
+    - i would like to watch a video in [french](lang)
+    - can i watch something in [spanish](lang)
+    - i want to watch [among us]("search_query") in [chinese](lang)
+    - i wanna watch [bad voice acting]("search_query") in [japanese](lang)
+    - send me a link to a youtube video in [polish](lang)
     - youtube video
-    - give me some videos in [arabic]("lang")
+    - give me some videos in [arabic](lang)
 
 - intent: inform_lang
   examples: |
-    - my target language is [english]("lang")
-    - in [spanish]("lang")
-    - it's [german]("lang")
-    - its [italian]("lang")
-    - [chinese]("lang") please
-    - [japanese]("lang")
-    - [vietnamese]("lang")
-    - [tagalog]("lang")
-    - [french]("lang")
-    - [polish]("lang")
-    - [russian]("lang")
+    - my target language is [english](lang)
+    - in [spanish](lang)
+    - it's [german](lang)
+    - its [italian](lang)
+    - [chinese](lang) please
+    - [japanese](lang)
+    - [vietnamese](lang)
+    - [tagalog](lang)
+    - [french](lang)
+    - [polish](lang)
+    - [russian](lang)
 
 - intent: inform_search_query
   examples: |
-    - [cats]("search_query")  
+    - I want to watch [documentaries](search_query)
+    - [cats](search_query)  
 
 
 - intent: goodbye
