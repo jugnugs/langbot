@@ -31,14 +31,15 @@ nlu:
 - intent: request_youtube_vid
   examples: |
     - i want to watch something
-    - i want to watch something in {}
-    - i would like to watch a youtube video in {}
-    - i would like to watch a video in {}
-    - can i watch something in {}
-    - i wanna watch {} in {}
-    - send me a link to a youtube video in {}
+    - i want to watch something in [english]("lang")
+    - i would like to watch a youtube video in [german]("lang")
+    - i would like to watch a video in [french]("lang")
+    - can i watch something in [spanish]("lang")
+    - i want to watch [among us]("search_query") in [chinese]("lang")
+    - i wanna watch [bad voice acting]("search_query") in [japanese]("lang")
+    - send me a link to a youtube video in [polish]("lang")
     - youtube video
-    - give me some videos in {}
+    - give me some videos in [arabic]("lang")
 
 
 - intent: goodbye
