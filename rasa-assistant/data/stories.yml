@@ -16,12 +16,26 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
+- story: test custom actions
+  steps:
+  - intent: hello_test
+  - action: action_hello_world
+
 - story:  Activate youtube vid form
   steps:
   - intent: request_youtube_vid
+    entities:
+    - lang: "english"
+    - search_query: "cats"
   - action: utter_prompt_youtube_form
   - action: utter_ask_youtube_vid_form_lang
   - intent: inform_lang
+    entities:
+    - lang: "english"
   - action: utter_ask_youtube_vid_form_search_query
   - intent: inform_search_query
+    entities:
+    - search_query: "cats"
   - action: action_get_youtube_vid
+
+  
