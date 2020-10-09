@@ -16,19 +16,9 @@ from rasa_sdk.executor import CollectingDispatcher
 from googleapiclient.discovery import build
 
 youtube_api_key = os.environ.get('YT_API_KEY')
-youtube_url_base = '//www.youtube.com/watch?v='
+youtube_url_base = 'www.youtube.com/watch?v='
 
 youtube = build('youtube', 'v3', developerKey=youtube_api_key)
-
-request = youtube.search().list(
-        part='snippet',
-        q='among us',
-        relevanceLanguage='en' 
-    )
-
-response = request.execute()
-
-print(str(Language.find('english')))
 
 class ActionGetYouTubeVideo(Action):
 
@@ -36,16 +26,30 @@ class ActionGetYouTubeVideo(Action):
 
         return "action_get_youtube_vid"
 
-    async def run(self, 
-                dispatcher: CollectingDispatcher, 
-                tracker: Tracker, 
-                domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        q = tracker.get_slot('search_query')
-        lang = tracker.get_slot('lang')
-        dispatcher.utter_message(text = q)
-        dispatcher.utter_message(text = lang)
-        return []
+    async def run(self,
+                  dispatcher: CollectingDispatcher,
+                  tracker: Tracker,
+                  domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # keyword = tracker.get_slot('search_query')
+        # lang = tracker.get_slot('lang')
+        # langcode = str(Language.find(lang))
+        keyword = 'among us'
+        lang = 'English'
+        langcode = str(Language.find(lang))
 
+        request = youtube.search().list(
+            part='snippet',
+            q=keyword,
+            relevanceLanguage=langcode
+        )
+        response = request.execute()
+
+        for item in response['items']:
+            id = item['id']['videoId']
+            # dispatcher.utter_message(text = youtube_url_base + id)
+            print(youtube_url_base + id)
+
+        return []
 
 
 class ActionHelloWorld(Action):
