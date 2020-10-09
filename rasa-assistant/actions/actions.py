@@ -30,11 +30,8 @@ class ActionGetYouTubeVideo(Action):
                   dispatcher: CollectingDispatcher,
                   tracker: Tracker,
                   domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # keyword = tracker.get_slot('search_query')
-        # lang = tracker.get_slot('lang')
-        # langcode = str(Language.find(lang))
-        keyword = 'among us'
-        lang = 'English'
+        keyword = tracker.get_slot('search_query')
+        lang = tracker.get_slot('lang')
         langcode = str(Language.find(lang))
 
         request = youtube.search().list(
@@ -43,11 +40,10 @@ class ActionGetYouTubeVideo(Action):
             relevanceLanguage=langcode
         )
         response = request.execute()
-
+        dispatcher.utter_message(text = 'Here are the top 5 search results for %s in %s.' % (keyword, lang))
         for item in response['items']:
             id = item['id']['videoId']
-            # dispatcher.utter_message(text = youtube_url_base + id)
-            print(youtube_url_base + id)
+            dispatcher.utter_message(text = youtube_url_base + id)
 
         return []
 
