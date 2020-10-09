@@ -7,6 +7,7 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 import os
+from langcodes import *
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -27,9 +28,7 @@ request = youtube.search().list(
 
 response = request.execute()
 
-for item in response['items']:
-    id = item['id']['videoId']
-    print(youtube_url_base + id)
+print(str(Language.find('english')))
 
 class ActionGetYouTubeVideo(Action):
 
