@@ -37,13 +37,15 @@ class ActionGetYouTubeVideo(Action):
         request = youtube.search().list(
             part='snippet',
             q=keyword,
+            type='video',
             relevanceLanguage=langcode
         )
+
         response = request.execute()
         dispatcher.utter_message(text = 'Here are the top 5 search results for %s in %s.' % (keyword, lang))
         for item in response['items']:
-            id = item['id']['videoId']
-            dispatcher.utter_message(text = youtube_url_base + id)
+            id = item['id'].get('videoId')
+            dispatcher.utter_message(text=youtube_url_base + id)
 
         return []
 
