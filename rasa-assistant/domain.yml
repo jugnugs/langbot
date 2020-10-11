@@ -14,9 +14,9 @@ entities:
 
 slots:
   lang:
-    type: text
+    type: unfeaturized
   search_query: 
-    type: text
+    type: unfeaturized
 
 actions:
   - action_hello_world
