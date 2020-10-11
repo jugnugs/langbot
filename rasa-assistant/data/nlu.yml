@@ -65,24 +65,26 @@ nlu:
 
 - intent: inform_lang
   examples: |
-    - my target language is [english](lang)
-    - in [spanish](lang)
-    - it's [german](lang)
-    - its [italian](lang)
-    - [chinese](lang) please
-    - [japanese](lang)
-    - [vietnamese](lang)
-    - [tagalog](lang)
-    - [french](lang)
-    - [polish](lang)
-    - [russian](lang)
+    - english
+    - spanish
+    - german
+    - italian
+    - chinese
+    - japanese
+    - korean
+    - vietnamese
+    - tagalog
+    - french
+    - polish
+    - russian
 
 - intent: inform_search_query
   examples: |
-    - search for [music videos](search_query)
-    - send me [documentaries](search_query)
-    - please send me [cats](search_query)
-    - i would like to see some [dogs](search_query) 
+    - among us
+    - cats
+    - dogs
+    - movie review
+    - documentaries
 
 
 - intent: goodbye

@@ -2,15 +2,22 @@ version: "2.0"
 
 rules:
 
-# - rule: Activate youtube vid form
-#   steps:
-#   - intent: request_youtube_vid
-#   - action: utter_prompt_youtube_form
-#   - action: utter_ask_youtube_vid_form_lang
-#   - intent: inform_lang
-#   - action: utter_ask_youtube_vid_form_search_query
-#   - intent: inform_search_query
-#   - action: action_get_youtube_vid
+- rule: Activate youtube vid form
+  steps:
+  - intent: request_youtube_vid
+  - action: utter_prompt_youtube_form
+  - action: youtube_vid_form
+  - active_loop: youtube_vid_form
+
+- rule: Deactivate youtube vid form
+  condition:
+  - active_loop: youtube_vid_form
+  steps:
+  - action: youtube_vid_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_get_youtube_vid
 
 - rule: Say goodbye anytime the user says goodbye
   steps:

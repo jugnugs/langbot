@@ -3,11 +3,10 @@ version: "2.0"
 forms:
   youtube_vid_form:
     lang:
-      - type: from_entity
-        entity: lang
+      - type: from_text
+        intent: inform_lang
     search_query:
-      - type: from_entity
-        entity: search_query
+      - type: from_text
 
 entities:
   - lang
