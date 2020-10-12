@@ -1,20 +1,6 @@
 version: "2.0"
 
 nlu:
-- lookup: lang
-  examples: |
-    - english
-    - spanish
-    - german
-    - italian
-    - chinese
-    - japanese
-    - korean
-    - vietnamese
-    - tagalog
-    - french
-    - polish
-    - russian
 
 - intent: hello_test
   examples: |
@@ -53,21 +39,26 @@ nlu:
 - intent: request_youtube_vid
   examples: |
     - i want to watch something
-    - i want to watch something in [english](lang)
-    - i would like to watch a youtube video in [german](lang)
-    - i would like to watch a video in [french](lang)
-    - can i watch something in [spanish](lang)
-    - i want to watch [among us](search_query) in [chinese](lang)
-    - i wanna watch [bad voice acting](search_query) in [japanese](lang)
-    - send me a link to a youtube video in [polish](lang)
+    - i want to watch a video
+    - langbot youtube
+    - i would like to watch a youtube video
+    - i would like to watch a video
+    - can i watch something
+    - can you send me youtube video
+    - langbot show me some videos
+    - send me a link to a youtube video
     - youtube video
-    - give me some videos in [arabic](lang)
+    - give me some videos
 
 - intent: inform_lang
   examples: |
     - english
     - spanish
     - german
+    - hindi
+    - bengali
+    - portuguese
+    - arabic
     - italian
     - chinese
     - japanese

@@ -8,10 +8,6 @@ forms:
     search_query:
       - type: from_text
 
-entities:
-  - lang
-  - search_query
-
 slots:
   lang:
     type: unfeaturized
