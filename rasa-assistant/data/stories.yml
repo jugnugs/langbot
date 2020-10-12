@@ -16,9 +16,4 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: test custom actions
-  steps:
-  - intent: hello_test
-  - action: action_hello_world
-
   

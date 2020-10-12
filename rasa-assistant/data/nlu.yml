@@ -2,13 +2,6 @@ version: "2.0"
 
 nlu:
 
-- intent: hello_test
-  examples: |
-    - hello test
-    - hey test
-    - testing testing
-    - test that test
-
 - intent: greet
   examples: |
     - hey

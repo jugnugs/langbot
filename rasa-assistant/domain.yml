@@ -15,11 +15,9 @@ slots:
     type: unfeaturized
 
 actions:
-  - action_hello_world
   - action_get_youtube_vid
 
 intents:
-  - hello_test
   - request_youtube_vid
   - inform_lang
   - inform_search_query
