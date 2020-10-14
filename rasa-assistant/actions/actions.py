@@ -20,10 +20,6 @@ youtube_url_base = 'www.youtube.com/watch?v='
 youtube = build('youtube', 'v3', developerKey=youtube_api_key)
 translator = Translator()
 
-print('東京')
-translation = translator.translate('hello', dest='ja')
-print(translation.text)
-
 class ActionGetYouTubeVideo(Action):
 
     def name(self) -> Text:
@@ -37,7 +33,7 @@ class ActionGetYouTubeVideo(Action):
         keyword = tracker.get_slot('search_query')
         lang = tracker.get_slot('lang')
         langcode = str(Language.find(lang))
-        trans_keyword = translator.translate(keyword, dest=langcode)
+        trans_keyword = translator.translate(keyword, dest=langcode).text
 
         request = youtube.search().list(
             part='snippet',
