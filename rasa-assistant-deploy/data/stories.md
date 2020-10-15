@@ -11,6 +11,13 @@
 * goodbye
   - utter_goodbye
 
+## youtube search form happy path
+* request_youtube_vid
+    - utter_prompt_youtube_form
+    - youtube_vid_form
+    - form{"name": "youtube_vid_form"}
+    - form{"name": null}
+
 ## say goodbye
 * goodbye
   - utter_goodbye
