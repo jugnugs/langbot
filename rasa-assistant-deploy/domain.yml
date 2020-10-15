@@ -1,0 +1,68 @@
+forms:
+  - youtube_vid_form
+
+slots:
+  lang:
+    type: unfeaturized
+  search_query: 
+    type: unfeaturized
+
+actions:
+  - action_get_youtube_vid
+
+intents:
+  - request_youtube_vid
+  - inform_lang
+  - inform_search_query
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - ask_uses
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_greet_start:
+    - text: "Greetings! My name is LangBot, a conversational assistant designed to assist with language learning. 
+    I'm still in early development, but I can answer questions about my current functionality!"
+
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_uses:
+  - text: "Glad you asked! Right now I'm only able to handle simple conversations in English. I can tell you more about 
+  planned features if you'd like."
+
+  utter_planned_features:
+  - text: "Currently planned features include: action calls to Youtube API for learning resources, bilingual support for 
+  English and Japanese, translation actions through Google Translate API"
+
+  utter_prompt_youtube_form:
+  - text: "OK, I'll send you some links to some Youtube videos you might be interested in."
+
+  utter_ask_youtube_vid_form_lang: 
+  - text: "What is your target language?"
+
+  utter_ask_youtube_vid_form_search_query: 
+  - text: "What do you want to watch?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Thanks for chatting with me. Goodbye!"
+
+  utter_iamabot:
+  - text: "I'm LangBot."
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
