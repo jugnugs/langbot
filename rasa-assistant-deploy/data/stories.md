@@ -5,7 +5,7 @@
   - utter_uses
 * affirm
   - utter_planned_features
-  - utter_did that_help
+  - utter_did_that_help
 * affirm
   - utter_happy
 * goodbye
@@ -17,6 +17,7 @@
     - youtube_vid_form
     - form{"name": "youtube_vid_form"}
     - form{"name": null}
+    - action_get_youtube_vid
 
 ## say goodbye
 * goodbye

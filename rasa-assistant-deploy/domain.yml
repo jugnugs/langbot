@@ -42,10 +42,10 @@ responses:
   utter_prompt_youtube_form:
   - text: "OK, I'll send you some links to some Youtube videos you might be interested in."
 
-  utter_ask_youtube_vid_form_lang: 
+  utter_ask_lang: 
   - text: "What is your target language?"
 
-  utter_ask_youtube_vid_form_search_query: 
+  utter_ask_search_query: 
   - text: "What do you want to watch?"
 
   utter_cheer_up:
