@@ -10,9 +10,11 @@ forms:
 
 slots:
   lang:
-    type: unfeaturized
+    type: text
+    influence_conversation: false
   search_query: 
-    type: unfeaturized
+    type: text
+    influence_conversation: false
 
 actions:
   - action_get_youtube_vid
@@ -32,44 +34,44 @@ intents:
 
 responses:
   utter_greet_start:
-    - text: "Greetings! My name is LangBot, a conversational assistant designed to assist with language learning. 
-    I'm still in early development, but I can answer questions about my current functionality!"
+    - text: "こんにちは！語学のためで、チャットボットのLangBotと申します。まだ開発中ですが、
+    現在の機能についての質問を答えられます。"
 
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "どうも。お元気でしょうか。"
 
   utter_uses:
-  - text: "Glad you asked! Right now I'm only able to handle simple conversations in English. I can tell you more about 
-  planned features if you'd like."
+  - text: "かしこまりました！日本語か英語で今まで容易な会話が出来ます。それに、
+  目標の言語でユーチュービデオを取得するためにYoutubeAPIにアクションコールも出来ます。
+  よかったら、予定な機能についてお教えしましょうか。"
 
   utter_planned_features:
-  - text: "Currently planned features include: action calls to Youtube API for learning resources, bilingual support for 
-  English and Japanese, translation actions through Google Translate API"
+  - text: "含めている予定な機能：　GoogleTranslateAPIを使う翻訳のアクション"
 
   utter_prompt_youtube_form:
-  - text: "OK, I'll send you some links to some Youtube videos you might be interested in."
+  - text: "ありがとうございます。では、適切なユーチュービデオにいくつかリンクいたします。"
 
   utter_ask_youtube_vid_form_lang: 
-  - text: "What is your target language?"
+  - text: "目標の言語は何でしょうか。"
 
   utter_ask_youtube_vid_form_search_query: 
-  - text: "What do you want to watch?"
+  - text: "何をご覧になりますか"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
+  - text: "こちらがお元気をお出しされることです。"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - text: "それがお手伝いしたのですか。"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "よかったです！では、お続けください。"
 
   utter_goodbye:
-  - text: "Thanks for chatting with me. Goodbye!"
+  - text: "しゃべって下さってありがとうございました。 さようなら！"
 
   utter_iamabot:
-  - text: "I'm LangBot."
+  - text: "LangBotです。"
 
 session_config:
   session_expiration_time: 60
