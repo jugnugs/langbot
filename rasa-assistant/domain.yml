@@ -28,8 +28,6 @@ intents:
   - affirm
   - deny
   - ask_uses
-  - mood_great
-  - mood_unhappy
   - bot_challenge
 
 responses:
@@ -56,10 +54,6 @@ responses:
 
   utter_ask_youtube_vid_form_search_query: 
   - text: "何をご覧になりますか"
-
-  utter_cheer_up:
-  - text: "こちらがお元気をお出しされることです。"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
   - text: "それがお手伝いしたのですか。"

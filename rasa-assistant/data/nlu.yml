@@ -4,146 +4,227 @@ nlu:
 
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - こんにちわ
+    - こんにちは
+    - おはよう
+    - おはよ
+    - おはようございます
+    - 元気
+    - げんき
+    - お元気ですか
+    - おげんきですか
+    - はじめまして
+    - もしもし
+    - 元気だった
+    - げんきだった
+    - こんばんは
+    - こんばんわ
+    - やあ
+    - 久しぶり
+    - ひさしぶり
+    - よ
+    - 久しぶりだね
+    - ひさしぶりだね
 
 - intent: ask_uses
   examples: |
-    - what do you do
-    - what can you do
-    - tell me about yourself
-    - what are your uses
-    - what can i do with you
-    - what are you able to do right now
-    - tell me about your functionality
-    - how can i use you
+    - 出来ることは何ですか
+    - できることは何ですか
+    - できることはなんですか
+    - 何が出来ますか
+    - なにができますか
+    - なにできるの？
+    - 何できるの？
+    - LangBotについて教えてくれませんか
+    - LangBotについて知りたいんですが
+    - LangBotについて知りたい
+    - もっと知りたいんですが
+    - もっと知りたい
+    - LangBotの使い方
+    - LangBotの使い方は
+    - どう使う
+    - どう使いますか
+    - 機能は
+    - 機能は何ですか
+    - LangBotの機能は何ですか
 
 - intent: request_youtube_vid
   examples: |
-    - i want to watch something
-    - i want to watch a video
-    - langbot youtube
-    - i would like to watch a youtube video
-    - i would like to watch a video
-    - can i watch something
-    - can you send me youtube video
-    - langbot show me some videos
-    - send me a link to a youtube video
-    - youtube video
-    - give me some videos
+    - 何か見たい
+    - なにかみたい
+    - 何か見られますか
+    - 何か見られるの？
+    - ビデオ
+    - ビデオを見たい
+    - ビデオお願いします
+    - ビデオおねがいします
+    - ビデオください
+    - ビデオ下さい
+    - 道具
+    - 道具を見たい
+    - 道具お願いします
+    - 道具おねがいします
+    - 道具ください
+    - 道具下さい
+    - ユーチュービデオ
+    - ユーチュービデオを見たい
+    - ユーチュービデオお願いします
+    - ユーチュービデオおねがいします
+    - ユーチュービデオください
+    - ユーチュービデオ下さい
+    - ユーチュー
+    - ユーチューをリンクしてくれませんか
 
 - intent: inform_lang
   examples: |
-    - english
-    - spanish
-    - german
-    - hindi
-    - bengali
-    - portuguese
-    - arabic
-    - italian
-    - chinese
-    - japanese
-    - korean
-    - vietnamese
-    - tagalog
-    - french
-    - polish
-    - russian
+    - 英語
+    - えいご
+    - スペイン語
+    - スペインご
+    - ドイツ語
+    - ドイツご
+    - ヒンディー語
+    - ヒンディーご
+    - ベンガル語
+    - ベンガルご
+    - ポルトガル語
+    - ポルトガルご
+    - アラビア語
+    - アラビアご
+    - イタリア語
+    - イタリアご
+    - 中国語
+    - ちゅうごくご
+    - 日本語
+    - にほんご
+    - 韓国語
+    - 朝鮮語
+    - かんこくご
+    - ベトナム語
+    - ベトナムご
+    - タガログ語
+    - タガログご
+    - フランス語
+    - フランスご
+    - ポーランド語
+    - ポーランドご
+    - ロシア語
+    - ロシアご
+    - トルコ語
+    - トルコご
+    - デンマーク語
+    - デンマークご
+    - オランダ語
+    - オランダご
+    - スウェーデン語
+    - スウェーデンご
+    - ハンガリー語
+    - ハンガリーご
+    - カタルーニャ語
+    - カタルーニャご
+    - セルビア語
+    - セルビアご
+    - マレーシア語
+    - マレーシアご
+    - ブルガリア語
+    - ブルガリアご
+    - ノルウェー語
+    - ノルウェーご
+    - タイ語
+    - タイご
+    - フラマン語
+    - フラマンご
 
 - intent: inform_search_query
   examples: |
     - among us
-    - cats
-    - dogs
-    - movie review
-    - documentaries
+    - 猫
+    - ねこ
+    - 犬
+    - いぬ
+    - 映画レビュー
+    - ドキュメンタリー
 
 
 - intent: goodbye
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - さようなら
+    - また会いましょう
+    - 失礼
+    - 失礼します
+    - お休み
+    - おやすみ
+    - おやすみなさい
+    - ご機嫌よう
+    - ごきげんよう
+    - また
+    - またね
+    - また明日
+    - またあした
+    - お世話になっております
+    - 先に
+    - お先に失礼します
+    - 行ってき
+    - バイ
+    - バイバイ
+    - じゃね
+    - じゃあね
+    - 行ってまいります
 
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - alright
-    - that sounds good
-    - ok
-    - sure
-    - sounds good
-    - correct
+    - はい
+    - うん
+    - いいです
+    - いい
+    - いいね
+    - いいとも
+    - もちろん
+    - かしこまりました
+    - ええ
+    - そうそう
+    - そうですね
+    - そうです
+    - オッケー
+    - ぜひ、お願いします
+    - ぜひ、おねがいします
+    - 結構です
+    - けっこうです
 
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - いいえ
+    - ううん
+    - いや
+    - だめ
+    - やだ
+    - 違います
+    - ちがいます
+    - 違う
+    - ちがう
+    - ちょっと
+    - そんな
+    - そんなことはない
+    - そんなことはありません
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - ボットですか。
+    - あなたボット？
+    - ボットじゃないの？
+    - LangBotはボットですか
+    - 人間ですか
+    - にんげんですか
+    - あなた人間？
+    - あなたにんげん？
+    - 人間じゃないですか
+    - LangBotは人間ですか
+    - LangBotはにんげんですか
+    - ボットと話していますか
+    - ボットと話してますか
+    - ボットとしゃべっていますか
+    - 人間と話していますか
+    - 人間と話してますか
+    - にんげんと話していますか
+    - 人間としゃべっていますか
+    - にんげんとしゃべっていますか
