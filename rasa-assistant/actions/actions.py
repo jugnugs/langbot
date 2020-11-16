@@ -19,9 +19,6 @@ youtube_url_base = 'www.youtube.com/watch?v='
 
 youtube = build('youtube', 'v3', developerKey=youtube_api_key)
 
-text = "フランス語"
-print(ts.google(text, to_language='en',if_use_cn_host=True))
-
 class ActionGetYouTubeVideo(Action):
 
     def name(self) -> Text:
@@ -46,7 +43,7 @@ class ActionGetYouTubeVideo(Action):
         )
 
         response = request.execute()
-        dispatcher.utter_message(text = '「%s」(%s)にとって%sで関連する５つのヒット：' % (keyword, trans_keyword, lang))
+        dispatcher.utter_message(text = '「%s」(%s)にとって%sで関連する５つのヒット：' % (keyword, trans_keyword, tracker.get_slot('lang')))
         for item in response['items']:
             id = item['id'].get('videoId')
             dispatcher.utter_message(text=youtube_url_base + id)
