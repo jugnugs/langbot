@@ -10,9 +10,11 @@ forms:
 
 slots:
   lang:
-    type: unfeaturized
+    type: text
+    influence_conversation: false
   search_query: 
-    type: unfeaturized
+    type: text
+    influence_conversation: false
 
 actions:
   - action_get_youtube_vid
