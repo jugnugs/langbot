@@ -12,13 +12,12 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
 from googleapiclient.discovery import build
-from googletrans import Translator
+import translators as ts
 
 youtube_api_key = os.environ.get('YT_API_KEY')
 youtube_url_base = 'www.youtube.com/watch?v='
 
 youtube = build('youtube', 'v3', developerKey=youtube_api_key)
-translator = Translator()
 
 class ActionGetYouTubeVideo(Action):
 
@@ -33,7 +32,7 @@ class ActionGetYouTubeVideo(Action):
         keyword = tracker.get_slot('search_query')
         lang = tracker.get_slot('lang')
         langcode = str(Language.find(lang))
-        trans_keyword = translator.translate(keyword, dest=langcode).text
+        trans_keyword = ts.google(keyword, to_language=langcode,if_use_cn_host=True)	
 
         request = youtube.search().list(
             part='snippet',
