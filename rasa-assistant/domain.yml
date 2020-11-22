@@ -1,72 +1,56 @@
-version: "2.0"
-
-forms:
-  youtube_vid_form:
-    lang:
-      - type: from_text
-        intent: inform_lang
-    search_query:
-      - type: from_text
-
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- request_youtube_vid
+- inform_lang
+- inform_search_query
+- greet
+- goodbye
+- affirm
+- deny
+- ask_uses
+- bot_challenge
 slots:
   lang:
     type: text
     influence_conversation: false
-  search_query: 
+  requested_slot:
     type: text
     influence_conversation: false
-
-actions:
-  - action_get_youtube_vid
-
-intents:
-  - request_youtube_vid
-  - inform_lang
-  - inform_search_query
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - ask_uses
-  - bot_challenge
-
+  search_query:
+    type: text
+    influence_conversation: false
 responses:
   utter_greet_start:
-    - text: "こんにちは！語学のためで、チャットボットのLangBotと申します。まだ開発中ですが、
-    現在の機能についての質問を答えられます。"
-
+  - text: こんにちは！語学のためで、チャットボットのLangBotと申します。まだ開発中ですが、 現在の機能についての質問を答えられます。
   utter_greet:
-  - text: "どうも。お元気でしょうか。"
-
+  - text: どうも。お元気でしょうか。
   utter_uses:
-  - text: "かしこまりました！日本語か英語で今まで容易な会話が出来ます。それに、
-  目標の言語でユーチュービデオを取得するためにYoutubeAPIにアクションコールも出来ます。
-  よかったら、予定な機能についてお教えしましょうか。"
-
+  - text: かしこまりました！日本語か英語で今まで容易な会話が出来ます。それに、 目標の言語でユーチュービデオを取得するためにYoutubeAPIにアクションコールも出来ます。
+      よかったら、予定な機能についてお教えしましょうか。
   utter_planned_features:
-  - text: "含めている予定な機能：　GoogleTranslateAPIを使う翻訳のアクション"
-
+  - text: 含めている予定な機能：　GoogleTranslateAPIを使う翻訳のアクション
   utter_prompt_youtube_form:
-  - text: "ありがとうございます。では、適切なユーチュービデオにいくつかリンクいたします。"
-
-  utter_ask_youtube_vid_form_lang: 
-  - text: "目標の言語は何でしょうか。"
-
-  utter_ask_youtube_vid_form_search_query: 
-  - text: "何をご覧になりますか"
-
+  - text: ありがとうございます。では、適切なユーチュービデオにいくつかリンクいたします。
+  utter_ask_youtube_vid_form_lang:
+  - text: 目標の言語は何でしょうか。
+  utter_ask_youtube_vid_form_search_query:
+  - text: 何をご覧になりますか
   utter_did_that_help:
-  - text: "それがお手伝いしたのですか。"
-
+  - text: それがお手伝いしたのですか。
   utter_happy:
-  - text: "よかったです！では、お続けください。"
-
+  - text: よかったです！では、お続けください。
   utter_goodbye:
-  - text: "しゃべって下さってありがとうございました。 さようなら！"
-
+  - text: しゃべって下さってありがとうございました。 さようなら！
   utter_iamabot:
-  - text: "LangBotです。"
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  - text: LangBotです。
+actions:
+- action_get_youtube_vid
+forms:
+  youtube_vid_form:
+    lang:
+    - intent: inform_lang
+      type: from_text
+    search_query:
+    - type: from_text
