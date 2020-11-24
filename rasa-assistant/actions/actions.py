@@ -10,14 +10,13 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+import rasa.core.channels.console
 
-from googleapiclient.discovery import build
 import translators as ts
+from youtube_search import YoutubeSearch
 
-youtube_api_key = os.environ.get('YT_API_KEY')
-youtube_url_base = 'www.youtube.com/watch?v='
-
-youtube = build('youtube', 'v3', developerKey=youtube_api_key)
+rasa.core.channels.console.DEFAULT_STREAM_READING_TIMEOUT_IN_SECONDS = 25
+YOUTUBE_URL_BASE = "https://www.youtube.com"
 
 class ActionGetYouTubeVideo(Action):
 
@@ -34,18 +33,12 @@ class ActionGetYouTubeVideo(Action):
         langcode = str(Language.find(lang))
         trans_keyword = ts.google(keyword, to_language=langcode,if_use_cn_host=True)	
 
-        request = youtube.search().list(
-            part='snippet',
-            q=trans_keyword,
-            type='video',
-            relevanceLanguage=langcode
-        )
+        results = YoutubeSearch(trans_keyword, max_results=10).to_dict()
 
-        response = request.execute()
         dispatcher.utter_message(text = 'Here are the top 5 search results for %s (%s) in %s.' % (keyword, trans_keyword, lang))
-        for item in response['items']:
-            id = item['id'].get('videoId')
-            dispatcher.utter_message(text=youtube_url_base + id)
+        for item in results:
+            id = item['url_suffix']
+            dispatcher.utter_message(text=YOUTUBE_URL_BASE + id)
 
         return []
 
