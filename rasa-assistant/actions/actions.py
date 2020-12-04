@@ -35,7 +35,7 @@ class ActionGetYouTubeVideo(Action):
         print("checkpoint 2")
         trans_keyword = ts.bing(keyword, to_language=langcode,if_use_cn_host=False)	
         print("checkpoint 3")
-        results = YoutubeSearch(trans_keyword, max_results=10).to_dict()
+        results = YoutubeSearch(trans_keyword, max_results=5).to_dict()
         print("checkpoint 4")
 
         dispatcher.utter_message(text = 'Here are the top 5 search results for %s (%s) in %s.' % (keyword, trans_keyword, lang))
