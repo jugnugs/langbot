@@ -10,14 +10,13 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+import rasa.core.channels.console
 
-from googleapiclient.discovery import build
 import translators as ts
+from youtube_search import YoutubeSearch
 
-youtube_api_key = os.environ.get('YT_API_KEY')
-youtube_url_base = 'www.youtube.com/watch?v='
-
-youtube = build('youtube', 'v3', developerKey=youtube_api_key)
+rasa.core.channels.console.DEFAULT_STREAM_READING_TIMEOUT_IN_SECONDS = 25
+YOUTUBE_URL_BASE = "https://www.youtube.com"
 
 class ActionGetYouTubeVideo(Action):
 
@@ -31,23 +30,16 @@ class ActionGetYouTubeVideo(Action):
                   domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         keyword = tracker.get_slot('search_query')
         # get English equivalent of language name
-        lang = ts.google(tracker.get_slot('lang'), to_language='en',if_use_cn_host=True)
+        lang = ts.bing(tracker.get_slot('lang'), to_language='en',if_use_cn_host=False)
         langcode = str(Language.find(lang))
-        trans_keyword = ts.google(keyword, to_language=langcode,if_use_cn_host=True)
+        trans_keyword = ts.bing(keyword, to_language=langcode,if_use_cn_host=False)
 
-        request = youtube.search().list(
-            part='snippet',
-            q=trans_keyword,
-            type='video',
-            relevanceLanguage=langcode
-        )
+        results = YoutubeSearch(trans_keyword, max_results=5).to_dict()
 
-        response = request.execute()
         dispatcher.utter_message(text = '「%s」(%s)にとって%sで関連する５つのヒット：' % (keyword, trans_keyword, tracker.get_slot('lang')))
-        for item in response['items']:
-            id = item['id'].get('videoId')
-            dispatcher.utter_message(text=youtube_url_base + id)
-
+        for item in results:
+            id = item['url_suffix']
+            dispatcher.utter_message(text=YOUTUBE_URL_BASE + id)
         return []
 
 # This is a simple example for a custom action which utters "Hello World!"
