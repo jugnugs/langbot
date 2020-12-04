@@ -30,19 +30,21 @@ class ActionGetYouTubeVideo(Action):
                   domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         keyword = tracker.get_slot('search_query')
         lang = tracker.get_slot('lang')
+        print("checkpoint 1")
         langcode = str(Language.find(lang))
-        trans_keyword = ts.google(keyword, to_language=langcode,if_use_cn_host=True)	
-
+        print("checkpoint 2")
+        trans_keyword = ts.bing(keyword, to_language=langcode,if_use_cn_host=False)	
+        print("checkpoint 3")
         results = YoutubeSearch(trans_keyword, max_results=10).to_dict()
+        print("checkpoint 4")
 
         dispatcher.utter_message(text = 'Here are the top 5 search results for %s (%s) in %s.' % (keyword, trans_keyword, lang))
         for item in results:
             id = item['url_suffix']
             dispatcher.utter_message(text=YOUTUBE_URL_BASE + id)
-
+        print("checkpoint 5")
         return []
 
-# This is a simple example for a custom action which utters "Hello World!"
 # class ActionHelloWorld(Action):
 
 #     def name(self) -> Text:
