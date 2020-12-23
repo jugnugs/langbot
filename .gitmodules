@@ -1,9 +1,0 @@
-[submodule "chatroom"]
-	path = chatroom
-	url = https://github.com/scalableminds/chatroom.git
-[submodule "rasa-demo"]
-	path = rasa-demo
-	url = https://github.com/RasaHQ/rasa-demo.git
-[submodule "rasa"]
-	path = rasa
-	url = https://github.com/RasaHQ/rasa.git
